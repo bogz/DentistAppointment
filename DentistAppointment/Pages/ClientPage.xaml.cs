@@ -15,6 +15,17 @@ namespace DentistAppointment.Pages
         public ClientPage()
         {
             InitializeComponent();
+
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            using (var context = new Services.Context())
+            {
+                blobCollectionView.ItemsSource = context.Clienti.ToList();
+            }
         }
 
         async void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
@@ -29,8 +40,6 @@ namespace DentistAppointment.Pages
                 context.RemoveRange(context.Clienti);
 
                 await context.SaveChangesAsync();
-
-                blobCollectionView.ItemsSource = context.Clienti.ToList();
             }
         }
     }

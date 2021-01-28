@@ -23,7 +23,7 @@ namespace DentistAppointment.Services
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "programari.db3");
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "dbprogramari.db3");
 
             optionsBuilder.UseSqlite($"Filename={dbPath}");
         }
@@ -31,8 +31,11 @@ namespace DentistAppointment.Services
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Cabinet>().HasKey(b => b.CabinetId).HasName("PrimaryKey_CabinetId");
+            modelBuilder.Entity<Cabinet>().Property(e => e.CabinetId).ValueGeneratedOnAdd();
             modelBuilder.Entity<Client>().HasKey(b => b.ClientId).HasName("PrimaryKey_Client");
-            modelBuilder.Entity<Programare>().HasKey(b => b.ProgramareId).HasName("PrimaryKey_ProgramareId");
+            modelBuilder.Entity<Client>().Property(e => e.ClientId).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Programare>().HasKey(b => b.ProgramareId).HasName("PrimaryKey_CabinetId");
+            modelBuilder.Entity<Programare>().Property(e => e.ProgramareId).ValueGeneratedOnAdd();
         }
     }
 }

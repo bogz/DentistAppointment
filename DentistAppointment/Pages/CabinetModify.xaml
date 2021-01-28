@@ -2,7 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="DentistAppointment.Pages.CabinetAdd" 
+    x:Class="DentistAppointment.Pages.CabinetModify" 
     Title="Adauga un nou cabinet">
     <ContentPage.Content>
         <StackLayout>
@@ -17,7 +17,7 @@
         </StackLayout>
     </ContentPage.Content>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Adauga" Clicked="Save_Clicked"/>
+        <ToolbarItem Text="Modifica" Clicked="Save_Clicked"/>
         <ToolbarItem Text="Renunta" Clicked="Cancel_Clicked"/>
     </ContentPage.ToolbarItems>
 </ContentPage>

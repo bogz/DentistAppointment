@@ -10,13 +10,13 @@ using Xamarin.Forms.Xaml;
 namespace DentistAppointment.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProgramariAdd : ContentPage
+    public partial class ProgramariModify : ContentPage
     {
         public int CabinetId;
         
         public int ClientId;
 
-        public ProgramariAdd()
+        public ProgramariModify()
         {
             InitializeComponent();
         }
@@ -42,7 +42,7 @@ namespace DentistAppointment.Pages
 
             using (var context = new Services.Context())
             {
-                context.Add(programare);
+                context.Update(programare);
 
                 await context.SaveChangesAsync();
             }

@@ -14,13 +14,16 @@
     </d:ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <CollectionView x:Name="blobCollectionView"                        
+        <CollectionView x:Name="blobCollectionView" 
                         SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10">
                         <Frame HasShadow="False" BorderColor="Black" CornerRadius="5">
-                            <Label Text="{Binding Nume}"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Nume}"/>
+                                <Label Text="{Binding Prenume}"/>
+                            </StackLayout>
                         </Frame>
                     </StackLayout>
                 </DataTemplate>

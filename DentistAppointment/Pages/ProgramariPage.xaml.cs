@@ -17,6 +17,16 @@ namespace DentistAppointment.Pages
             InitializeComponent();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            using (var context = new Services.Context())
+            {
+                blobCollectionView.ItemsSource = context.Programari.ToList();
+            }
+        }
+
         async void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new ProgramariAdd()));

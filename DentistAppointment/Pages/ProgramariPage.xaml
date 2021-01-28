@@ -20,7 +20,7 @@
                 <DataTemplate>
                     <StackLayout Padding="10">
                         <Frame HasShadow="False" BorderColor="Black" CornerRadius="5">
-                            <Label Text="{Binding Nume}"/>
+                            <Label Text="{Binding Data}"/>
                         </Frame>
                     </StackLayout>
                 </DataTemplate>
