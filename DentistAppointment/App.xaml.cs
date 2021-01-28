@@ -11,7 +11,7 @@ namespace DentistAppointment
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new CabinetPage());
+            MainPage = new NavigationPage(new MenuPage());
         }
 
         protected override void OnStart()

@@ -6,11 +6,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:DentistAppointment.Pages"
     mc:Ignorable="d"
-    x:Class="DentistAppointment.Pages.CabinetPage"
-    Title="Cabinete">
+    x:Class="DentistAppointment.Pages.ProgramariPage"
+    Title="Programari">
 
     <d:ContentPage.BindingContext>
-        <local:CabinetPage/>
+        <local:ProgramariPage/>
     </d:ContentPage.BindingContext>
 
     <ContentPage.Content>
@@ -28,7 +28,7 @@
             <CollectionView.EmptyView>
                 <StackLayout>
                     <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
-                           Text="Nu exista cabinete definite"/>
+                           Text="Nu exista programari definite"/>
                 </StackLayout>
             </CollectionView.EmptyView>
         </CollectionView>

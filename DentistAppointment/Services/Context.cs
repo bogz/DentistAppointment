@@ -27,5 +27,12 @@ namespace DentistAppointment.Services
 
             optionsBuilder.UseSqlite($"Filename={dbPath}");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Cabinet>().HasKey(b => b.CabinetId).HasName("PrimaryKey_CabinetId");
+            modelBuilder.Entity<Client>().HasKey(b => b.ClientId).HasName("PrimaryKey_Client");
+            modelBuilder.Entity<Programare>().HasKey(b => b.ProgramareId).HasName("PrimaryKey_ProgramareId");
+        }
     }
 }

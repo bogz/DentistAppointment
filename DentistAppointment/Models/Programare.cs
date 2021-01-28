@@ -3,7 +3,7 @@ namespace DentistAppointment
 {
     public class Programare
     {
-        public int ProgrameId { get; set; }
+        public int ProgramareId { get; set; }
 
         public int ClientId { get; set; }
         public Client Client { get; set; }
