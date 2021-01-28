@@ -12,18 +12,30 @@ namespace DentistAppointment.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CabinetModify : ContentPage
     {
-        public CabinetModify()
+        private Cabinet cabinet;
+
+        public CabinetModify(Cabinet obj)
         {
             InitializeComponent();
+            this.cabinet = obj;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            txtNume.Text = this.cabinet.Nume;
+            txtAdresa.Text = this.cabinet.Adresa;
         }
 
         async void Save_Clicked(System.Object sender, System.EventArgs e)
         {
-            var cabinet = new Cabinet { Nume = txtNume.Text, Adresa = txtAdresa.Text };
+            this.cabinet.Nume = txtNume.Text;
+            this.cabinet.Adresa = txtAdresa.Text;
 
             using (var context = new Services.Context())
             {
-                context.Update(cabinet);
+                context.Update(this.cabinet);
 
                 await context.SaveChangesAsync();
             }

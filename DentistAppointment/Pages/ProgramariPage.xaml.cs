@@ -17,6 +17,11 @@ namespace DentistAppointment.Pages
             InitializeComponent();
         }
 
+        async private void OnItemTapped(object obj, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new ProgramariModify(null)));
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -27,9 +32,30 @@ namespace DentistAppointment.Pages
             }
         }
 
-        async void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
+        async void Adauga_Clicked(System.Object sender, System.EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new ProgramariAdd()));
+        }
+
+        async void Modifica_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (blobCollectionView.SelectedItem != null)
+                await Navigation.PushModalAsync(new NavigationPage(new ProgramariModify((Programare)blobCollectionView.SelectedItem)));
+        }
+
+        async void Sterge_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (blobCollectionView.SelectedItem != null)
+            {
+                using (var context = new Services.Context())
+                {
+                    context.Remove((Programare)blobCollectionView.SelectedItem);
+
+                    await context.SaveChangesAsync();
+
+                    blobCollectionView.ItemsSource = context.Programari.ToList();
+                }
+            }
         }
 
         async void DeleteAll_Clicked(object sender, EventArgs e)

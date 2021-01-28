@@ -14,7 +14,7 @@
     </d:ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <CollectionView x:Name="blobCollectionView"                        
+        <CollectionView x:Name="blobCollectionView"  
                         SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
@@ -35,7 +35,9 @@
     </ContentPage.Content>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Adauga" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Text="Adauga" Clicked="Adauga_Clicked"/>
+        <ToolbarItem Text="Modifica" Clicked="Modifica_Clicked"/>
+        <ToolbarItem Text="Sterge" Clicked="Sterge_Clicked"/>
         <ToolbarItem Text="Sterge Toate" Clicked="DeleteAll_Clicked"/>
     </ContentPage.ToolbarItems>
 

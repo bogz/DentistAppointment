@@ -10,7 +10,7 @@
     Title="Programari">
 
     <d:ContentPage.BindingContext>
-        <local:ProgramariPage/>
+        <local:ProgramariPage BackgroundColor="#494949"/>
     </d:ContentPage.BindingContext>
 
     <ContentPage.Content>
@@ -35,7 +35,9 @@
     </ContentPage.Content>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Adauga" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Text="Adauga" Clicked="Adauga_Clicked"/>
+        <ToolbarItem Text="Modifica" Clicked="Modifica_Clicked"/>
+        <ToolbarItem Text="Sterge" Clicked="Sterge_Clicked"/>
         <ToolbarItem Text="Sterge Toate" Clicked="DeleteAll_Clicked"/>
     </ContentPage.ToolbarItems>
 

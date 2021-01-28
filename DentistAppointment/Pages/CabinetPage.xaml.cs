@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Windows.Input;
 
 namespace DentistAppointment.Pages
 {
@@ -27,9 +28,30 @@ namespace DentistAppointment.Pages
             }
         }
 
-        async void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
+        async void Adauga_Clicked(System.Object sender, System.EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new CabinetAdd()));
+        }
+
+        async void Modifica_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (blobCollectionView.SelectedItem != null)
+                await Navigation.PushModalAsync(new NavigationPage(new CabinetModify((Cabinet)blobCollectionView.SelectedItem)));
+        }
+
+        async void Sterge_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (blobCollectionView.SelectedItem != null)
+            {
+                using (var context = new Services.Context())
+                {
+                    context.Remove((Cabinet)blobCollectionView.SelectedItem);
+
+                    await context.SaveChangesAsync();
+
+                    blobCollectionView.ItemsSource = context.Cabinete.ToList();
+                }
+            }
         }
 
         async void DeleteAll_Clicked(object sender, EventArgs e)

@@ -18,6 +18,11 @@ namespace DentistAppointment.Pages
 
         }
 
+        async private void OnItemTapped(object obj, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new ClientModify(null)));
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -28,9 +33,30 @@ namespace DentistAppointment.Pages
             }
         }
 
-        async void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
+        async void Adauga_Clicked(System.Object sender, System.EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new ClientAdd()));
+        }
+
+        async void Modifica_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (blobCollectionView.SelectedItem != null) 
+                await Navigation.PushModalAsync(new NavigationPage(new ClientModify((Client)blobCollectionView.SelectedItem)));
+        }
+
+        async void Sterge_Clicked(System.Object sender, System.EventArgs e)
+        {
+            if (blobCollectionView.SelectedItem != null)
+            {
+                using (var context = new Services.Context())
+                {
+                    context.Remove((Client)blobCollectionView.SelectedItem);
+
+                    await context.SaveChangesAsync();
+
+                    blobCollectionView.ItemsSource = context.Clienti.ToList();
+                }
+            }
         }
 
         async void DeleteAll_Clicked(object sender, EventArgs e)
@@ -40,6 +66,8 @@ namespace DentistAppointment.Pages
                 context.RemoveRange(context.Clienti);
 
                 await context.SaveChangesAsync();
+
+                blobCollectionView.ItemsSource = context.Clienti.ToList();
             }
         }
     }
