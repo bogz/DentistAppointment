@@ -11,7 +11,7 @@
                     <TableSection Title="Client">
                         <EntryCell Label="Nume" Placeholder="Nume" x:Name="txtNume" Keyboard="Text" />
                         <EntryCell Label="Prenume" Placeholder="Prenume" x:Name="txtPrenume" Keyboard="Text" />
-                        <EntryCell Label="Telefon" Placeholder="Adresa" x:Name="txtTelefon" Keyboard="Telephone" />
+                        <EntryCell Label="Telefon" Placeholder="Nr telefon" x:Name="txtTelefon" Keyboard="Text" />
                     </TableSection>
                 </TableRoot>
             </TableView>

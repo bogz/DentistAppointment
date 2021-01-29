@@ -1,11 +1,8 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.OS;
 using Android.Runtime;
 using Android.Content.PM;
-using Android.Views;
-using Android.Widget;
-using Xamarin.Android;
+
 
 
 namespace DentistAppointment

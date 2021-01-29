@@ -1,9 +1,6 @@
-﻿using System;
-using System.Data;
-using System.IO;
+﻿using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Xamarin.Essentials;
-using SQLitePCL;
 
 namespace DentistAppointment.Services
 {

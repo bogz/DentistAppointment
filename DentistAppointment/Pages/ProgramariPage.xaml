@@ -20,7 +20,11 @@
                 <DataTemplate>
                     <StackLayout Padding="10">
                         <Frame HasShadow="False" BorderColor="Black" CornerRadius="5">
-                            <Label Text="{Binding Data}"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Cabinet}"/>
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Data}"/>
+                            </StackLayout>
                         </Frame>
                     </StackLayout>
                 </DataTemplate>
