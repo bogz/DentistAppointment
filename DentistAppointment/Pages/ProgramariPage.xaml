@@ -21,8 +21,8 @@
                     <StackLayout Padding="10">
                         <Frame HasShadow="False" BorderColor="Black" CornerRadius="5">
                             <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Client}"/>
                                 <Label Text="{Binding Cabinet}"/>
-                                <Label Text="{Binding Name}"/>
                                 <Label Text="{Binding Data}"/>
                             </StackLayout>
                         </Frame>
