@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage
+<ContentPage BackgroundColor="LightGoldenrodYellow"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -19,11 +19,11 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10">
-                        <Frame HasShadow="False" BorderColor="Black" CornerRadius="5">
+                        <Frame HasShadow="True" BackgroundColor="LightBlue" BorderColor="Black" CornerRadius="5">
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Client}"/>
-                                <Label Text="{Binding Cabinet}"/>
-                                <Label Text="{Binding Data}"/>
+                                <Label TextColor="Black" Text="{Binding Client}"/>
+                                <Label TextColor="Black" Text="{Binding Cabinet}"/>
+                                <Label TextColor="Black" Text="{Binding Data}"/>
                             </StackLayout>
                         </Frame>
                     </StackLayout>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage
+<ContentPage BackgroundColor="LightGoldenrodYellow"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="DentistAppointment.Pages.ProgramariAdd" 
@@ -7,17 +7,17 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Vertical">
-                <Label>Cabinet</Label>
+                <Label BackgroundColor="LightGray">Cabinet</Label>
                 <Picker x:Name="PickerCabinet" ItemsSource="{Binding CabinetList}" ItemDisplayBinding="{Binding Nume}" SelectedItem="{Binding CabinetId}" />
             </StackLayout>
             <StackLayout Orientation="Vertical">
-                <Label>Client</Label>
+                <Label BackgroundColor="LightGray">Client</Label>
                 <Picker x:Name="PickerClient" ItemsSource="{Binding ClientList}" ItemDisplayBinding="{Binding Nume}" SelectedItem="{Binding ClientId}" />
             </StackLayout>
             <TableView Intent="Form">
                 <TableRoot>
-                    <TableSection Title="Programare">
-                        <EntryCell Label="Data" Placeholder="Data" x:Name="txtData" Keyboard="Text" />
+                    <TableSection Title="Programare" TextColor="Black">
+                        <EntryCell Label="Data" Placeholder=" Introdu data" x:Name="txtData" Keyboard="Numeric" LabelColor="DarkRed"/>
                     </TableSection>
                 </TableRoot>
             </TableView>

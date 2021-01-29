@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage
+<ContentPage BackgroundColor="LightGoldenrodYellow"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="DentistAppointment.Pages.ClientAdd" 
@@ -8,10 +8,10 @@
         <StackLayout>
             <TableView Intent="Form">
                 <TableRoot>
-                    <TableSection Title="Client">
-                        <EntryCell Label="Nume" Placeholder="Nume" x:Name="txtNume" Keyboard="Text" />
-                        <EntryCell Label="Prenume" Placeholder="Prenume" x:Name="txtPrenume" Keyboard="Text" />
-                        <EntryCell Label="Telefon" Placeholder="Nr telefon" x:Name="txtTelefon" Keyboard="Text" />
+                    <TableSection Title="Client" TextColor="Black">
+                        <EntryCell Label="Nume" Placeholder=" Introdu Nume" x:Name="txtNume" Keyboard="Text" LabelColor="DarkRed"/>
+                        <EntryCell Label="Prenume" Placeholder=" Introdu Prenume" x:Name="txtPrenume" Keyboard="Text" LabelColor="DarkRed"/>
+                        <EntryCell Label="Telefon" Placeholder=" Introdu Nr telefon" x:Name="txtTelefon" Keyboard="Telephone" LabelColor="DarkRed"/>
                     </TableSection>
                 </TableRoot>
             </TableView>
